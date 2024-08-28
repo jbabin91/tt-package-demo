@@ -1,0 +1,35 @@
+{
+  "name": "tt-package-demo",
+  "version": "1.0.0",
+  "description": "A demo package for Total TypeScript",
+  "keywords": [
+    "demo",
+    "typescript"
+  ],
+  "homepage": "https://github.com/jbabin91/tt-package-demo",
+  "bugs": {
+    "url": "https://github.com/jbabin91/tt-package-demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbabin91/tt-package-demo.git"
+  },
+  "license": "MIT",
+  "author": "Jace Babin",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "ci": "pnpm run build",
+    "format": "prettier -uw --cache .",
+    "format:check": "prettier -uc --cache .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "typescript": "^5.5.4"
+  }
+}
