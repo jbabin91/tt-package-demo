@@ -17,19 +17,25 @@
   "license": "MIT",
   "author": "Jace Babin",
   "type": "module",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
-    "ci": "pnpm run build",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "check-format": "prettier -uc --cache .",
+    "ci": "pnpm run build && pnpm run check-format && pnpm run typecheck && pnpm run check-exports && pnpm run test",
+    "dev": "vitest",
     "format": "prettier -uw --cache .",
-    "format:check": "prettier -uc --cache .",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
     "prettier": "^3.3.3",
     "prettier-plugin-packagejson": "^2.5.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
