@@ -28,11 +28,14 @@
     "ci": "pnpm run build && pnpm run check-format && pnpm run typecheck && pnpm run check-exports && pnpm run test",
     "dev": "vitest",
     "format": "prettier -uw --cache .",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "pnpm run ci",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",
+    "@changesets/cli": "^2.27.7",
     "prettier": "^3.3.3",
     "prettier-plugin-packagejson": "^2.5.2",
     "typescript": "^5.5.4",
